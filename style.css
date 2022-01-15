@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    /* ---------- Primary Colors ---------- */
+    /* Text */
+    --veryDarkDesaturatedBlue: hsl(238, 29%, 16%);
+    --softRed: hsl(14, 88%, 65%);
+
+    /* Background Gradient */
+    --softViolet: hsl(273, 75%, 66%);
+    --softBlue: hsl(240, 73%, 65%);
+
+    /* ---------- Neutral Colors ---------- */
+    /* Text */
+    --veryDarkGrayishBlue: hsl(237, 12%, 33%);
+    --darkGrayishBlue: hsl(240, 6%, 50%);
+
+    /* Dividers */
+    --lightGrayishBlue: hsl(240, 5%, 91%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(var(--softViolet), var(--softBlue));
+    display: grid;
+    place-items: center;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.card {
+    width: 80vw;
+    height: 80vh;
+    background-color: #fff;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* ---------- Image Section ---------- */
+
+.left-column {
+    position: relative;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.left-column img {
+    position: absolute;
+    right: 60px;
+}
+
+.img-pattern {
+    width: 100%;
+}
+
+.img-desktop {
+    width: 100%;
+}
+
+.img-box {
+    width: 30%;
+    left: -10%;
+}
+
+/* ---------- FAQ Section ---------- */
+
+.right-column {
+    padding: 80px 80px 0 20px;
+}
+
+.faqs {
+    padding: 20px 20px 20px 0;
+    border-bottom: 1px solid var(--lightGrayishBlue);
+}
+
+.heading {
+    margin-bottom: 20px;
+    color: var(--veryDarkDesaturatedBlue);
+}
+
+.question {
+    font-weight: 400;
+    color: var(--darkGrayishBlue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.question:hover {
+    color: var(--softRed);
+}
+
+.arrow {
+    width: 14px;
+    transition: rotate .3s ease-in-out;
+}
+
+.answer {
+    margin-top: 20px;
+    padding-right: 20px;
+    color: var(--darkGrayishBlue);
+    display: none;
+}
+
+/* ---------- Active States ---------- */
+
+.q-active {
+    color: var(--veryDarkGrayishBlue);
+    font-weight: 700;
+}
+
+.a-active {
+    display: block;
+    transition: all 1s;
+}
+
+.ar-active {
+    transform: rotate(180deg);
+}
+
+/* ---------- Tablet Screen ---------- */
+
+@media screen and (max-width: 1000px) {
+
+    .body {
+        display: block;
+        position: relative;
+    }
+
+    .card {
+        position: absolute;
+        top: 140px;
+        height: fit-content;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+    }
+
+    /* ---------- Image Section ---------- */
+
+    .left-column img {
+        top: -10%;
+        right: 50%;
+        transform: translate(50%, -60%);
+    }
+
+    .img-pattern {
+        width: 45%;
+    }
+
+    .img-desktop {
+        width: 45%;
+    }
+
+    .img-box {
+        width: 12%;
+        left: 23%;
+    }
+
+    /* ---------- FAQ Section ---------- */
+
+    .right-column {
+        padding: 120px 30px 30px 30px;
+    }
+    
+    .faqs {
+        font-size: 14px;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--lightGrayishBlue);
+    }
+
+    .heading {
+        text-align: center;
+    }
+
+}
+
+/* ---------- Mobile Screen ---------- */
+
+@media screen and (max-width: 600px) {
+
+    .body {
+        display: block;
+        position: relative;
+    }
+
+    .card {
+        position: absolute;
+        top: 140px;
+        height: fit-content;
+        width: 90vw;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+    }
+
+    /* ---------- Image Section ---------- */
+
+    .left-column img {
+        top: -10%;
+        right: 50%;
+        transform: translate(50%, -60%);
+    }
+
+    .img-pattern {
+        width: 65%;
+    }
+
+    .img-desktop {
+        width: 65%;
+    }
+
+    .img-box {
+        width: 18%;
+        left: 10%;
+    }
+
+    /* ---------- FAQ Section ---------- */
+
+    .right-column {
+        padding: 120px 30px 30px 30px;
+    }
+    
+    .faqs {
+        font-size: 13px;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--lightGrayishBlue);
+    }
+
+    .heading {
+        text-align: center;
+    }
+
+}
